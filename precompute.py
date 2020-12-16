@@ -15,24 +15,31 @@ def precompute(words, length):
     by_letters = group_by_key_func(words, lambda w: "".join(sorted(w)))
 
     graph = Graph()
-    graph.add_nodes_from(by_letters)
-    for u, v in combinations(by_letters, 2):
-        u_counts = Counter(u)
-        v_counts = Counter(v)
-        less = None
-        more = None
-        for letter in u_counts.keys() | v_counts.keys():
-            if u_counts[letter] == v_counts[letter]:
-                continue
-            elif u_counts[letter] == v_counts[letter] + 1 and more is None:
-                more = letter
-            elif u_counts[letter] == v_counts[letter] - 1 and less is None:
-                less = letter
+    by_subletters = defaultdict(list)
+    for key in by_letters:
+        counts = tuple(Counter(key).items())
+        for differing_letters in [1, 2]:
+            for subletters in combinations(counts, len(counts) - differing_letters):
+                by_subletters[subletters].append(key)
+
+    for group in by_subletters.values():
+        for u, v in combinations(group, 2):
+            u_counts = Counter(u)
+            v_counts = Counter(v)
+            less = None
+            more = None
+            for letter in u_counts.keys() | v_counts.keys():
+                if u_counts[letter] == v_counts[letter]:
+                    continue
+                elif u_counts[letter] == v_counts[letter] + 1 and more is None:
+                    more = letter
+                elif u_counts[letter] == v_counts[letter] - 1 and less is None:
+                    less = letter
+                else:
+                    break
             else:
-                break
-        else:
-            assert less and more
-            graph.add_edge(u, v)
+                assert less and more
+                graph.add_edge(u, v)
 
     components = list(networkx.connected_components(graph))
     nodes = list(max(components, key=len))
