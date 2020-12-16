@@ -1,5 +1,5 @@
 import json
-from collections import Counter
+from collections import Counter, defaultdict
 from itertools import combinations
 
 import networkx
@@ -36,12 +36,21 @@ def precompute(words, length):
 
     components = list(networkx.connected_components(graph))
     nodes = list(max(components, key=len))
-    graph = graph.subgraph(nodes)
+    graph: networkx.Graph = graph.subgraph(nodes).copy()
+    degree = graph.degree
+    leaves = [node for node in nodes if degree[node] == 1]
+    for leaf in leaves:
+        while True:
+            neighbors = list(graph.neighbors(leaf))
+            if len(neighbors) != 1:
+                break
+            graph.remove_node(leaf)
+            leaf = neighbors[0]
+
     result = {}
-    for node in nodes:
+    for node in graph:
         neighbors = list(graph.neighbors(node))
-        # if len(neighbors) == 1:
-        #     continue
+        assert len(neighbors) > 1
         result[node] = [by_letters[node], neighbors]
     return result
 
