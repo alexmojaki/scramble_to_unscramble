@@ -1,0 +1,59 @@
+.App > * {
+    display: inline-block;
+    height: 90vh;
+}
+
+.letters-row {
+    height: 50px;
+    width: 260px;
+    padding: 10px;
+    margin: 10px auto;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: monospace, monospace;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.scrambled-letters {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.actual-option {
+    border: 1px solid grey;
+    border-radius: 10px;
+    background: aliceblue;
+}
+
+.option-placeholder {
+    border: 1px solid transparent;
+    background: lightgrey;
+}
+
+.letter-block {
+    text-align: center;
+    display: inline-block;
+    width: 50px;
+    height: 100%;
+    margin: 5px;
+    border: 1px solid grey;
+}
+
+.options-list {
+    width: 300px;
+}
+
+.right-half {
+        position: relative;
+}
+
+.status-message {
+    position: absolute;
+    top: 25%;
+    font-size: 32px;
+    font-family: serif;
+    margin-left: 50px;
+}
