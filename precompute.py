@@ -65,7 +65,7 @@ def precompute(words, length):
 def precompute_all():
     words = requests.get("http://www.mieliestronk.com/corncob_lowercase.txt").text.split()
     result = {}
-    for length in range(8, 9):
+    for length in range(6, 12):
         print(f"Precomputing length {length}")
         result[length] = precompute(words, length)
 
