@@ -8,6 +8,7 @@ authors = ["Alex Hall <alex.mojaki@gmail.com>"]
 python = "^3.8"
 littleutils = "^0.2.2"
 networkx = "^2.5"
+requests = "^2.25.0"
 
 [tool.poetry.dev-dependencies]
 

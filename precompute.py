@@ -1,10 +1,13 @@
 import json
 from collections import Counter
+from itertools import combinations
 
 import networkx
-from itertools import combinations
-from littleutils import file_to_string, group_by_key_func
+import requests
+from littleutils import group_by_key_func
 from networkx import Graph
+
+from common import DATA_PATH
 
 
 def precompute(words, length):
@@ -33,18 +36,24 @@ def precompute(words, length):
 
     components = list(networkx.connected_components(graph))
     nodes = list(max(components, key=len))
-
-    return {node: [by_letters[node], list(graph.neighbors(node))] for node in nodes}
+    graph = graph.subgraph(nodes)
+    result = {}
+    for node in nodes:
+        neighbors = list(graph.neighbors(node))
+        # if len(neighbors) == 1:
+        #     continue
+        result[node] = [by_letters[node], neighbors]
+    return result
 
 
 def precompute_all():
-    words = file_to_string("/home/alex/Downloads/corncob_lowercase.txt").split()
+    words = requests.get("http://www.mieliestronk.com/corncob_lowercase.txt").text.split()
     result = {}
-    for length in range(6, 7):
+    for length in range(8, 9):
+        print(f"Precomputing length {length}")
         result[length] = precompute(words, length)
 
-    with open("/tmp/word_data.json", "w") as f:
-        json.dump(result, f)
+    DATA_PATH.write_text(json.dumps(result))
 
 
 precompute_all()

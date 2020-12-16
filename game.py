@@ -3,12 +3,12 @@ import random
 
 import itertools
 
+from common import DATA_PATH
+
 
 def get_path():
-    with open("/tmp/word_data.json") as f:
-        all_data = json.load(f)
-
-    data = all_data["6"]
+    all_data = json.loads(DATA_PATH.read_text())
+    data = all_data["8"]
 
     while True:
         seen = set()
@@ -20,7 +20,7 @@ def get_path():
             path.append(random.choice(words))
             options = set(neighbors) - seen
             if not options:
-                if len(seen) > 40:
+                if len(seen) > 200:
                     return path
                 break
             node = random.choice(list(options))
