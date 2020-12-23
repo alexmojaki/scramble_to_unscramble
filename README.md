@@ -4,7 +4,7 @@ This is a word unscrambling game. Right now it's just a concept and likely won't
 
 On the left is a list of words, on the right are some scrambled letters. You have to click the correct unscrambled word on the left.
 
-If you choose correctly, the word will be removed and one new word will be added to the list. At the same time one letter in the scrambled letters will change.
+If you choose correctly, the word will be removed and one new word will be added to the list. At the same time one letter in the scrambled letters will change. (the letters get rescrambled for now, but only because I haven't bothered preserving the order)
 
 This means that what's on the screen only changes slightly with each word, and consecutive words consist of similar letters. If a word *almost* fits the scrambled letters but not quite, it's likely the next word. All words in the list will at some point soon be the correct word.
 
