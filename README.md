@@ -20,5 +20,5 @@ Based on this an actual game could reward solving words quickly and punish takin
 - Under `app`:
     - `npm install` to install dependencies.
     - `npm start` to play the game locally.
-    - `npm deploy` to deploy to GitHub pages.
+    - `npm run deploy` to deploy to GitHub pages.
     
