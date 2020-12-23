@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/scramble-to-unscramble/static/css/main.628b5f02.chunk.css",
-    "main.js": "/scramble-to-unscramble/static/js/main.c91d06c2.chunk.js",
-    "main.js.map": "/scramble-to-unscramble/static/js/main.c91d06c2.chunk.js.map",
-    "runtime-main.js": "/scramble-to-unscramble/static/js/runtime-main.fc0333a1.js",
-    "runtime-main.js.map": "/scramble-to-unscramble/static/js/runtime-main.fc0333a1.js.map",
-    "static/js/2.28ba194a.chunk.js": "/scramble-to-unscramble/static/js/2.28ba194a.chunk.js",
-    "static/js/2.28ba194a.chunk.js.map": "/scramble-to-unscramble/static/js/2.28ba194a.chunk.js.map",
-    "static/js/3.61102436.chunk.js": "/scramble-to-unscramble/static/js/3.61102436.chunk.js",
-    "static/js/3.61102436.chunk.js.map": "/scramble-to-unscramble/static/js/3.61102436.chunk.js.map",
-    "index.html": "/scramble-to-unscramble/index.html",
-    "static/css/main.628b5f02.chunk.css.map": "/scramble-to-unscramble/static/css/main.628b5f02.chunk.css.map",
-    "static/js/2.28ba194a.chunk.js.LICENSE.txt": "/scramble-to-unscramble/static/js/2.28ba194a.chunk.js.LICENSE.txt"
+    "main.css": "/scramble_to_unscramble/static/css/main.628b5f02.chunk.css",
+    "main.js": "/scramble_to_unscramble/static/js/main.c91d06c2.chunk.js",
+    "main.js.map": "/scramble_to_unscramble/static/js/main.c91d06c2.chunk.js.map",
+    "runtime-main.js": "/scramble_to_unscramble/static/js/runtime-main.689cfe73.js",
+    "runtime-main.js.map": "/scramble_to_unscramble/static/js/runtime-main.689cfe73.js.map",
+    "static/js/2.28ba194a.chunk.js": "/scramble_to_unscramble/static/js/2.28ba194a.chunk.js",
+    "static/js/2.28ba194a.chunk.js.map": "/scramble_to_unscramble/static/js/2.28ba194a.chunk.js.map",
+    "static/js/3.61102436.chunk.js": "/scramble_to_unscramble/static/js/3.61102436.chunk.js",
+    "static/js/3.61102436.chunk.js.map": "/scramble_to_unscramble/static/js/3.61102436.chunk.js.map",
+    "index.html": "/scramble_to_unscramble/index.html",
+    "static/css/main.628b5f02.chunk.css.map": "/scramble_to_unscramble/static/css/main.628b5f02.chunk.css.map",
+    "static/js/2.28ba194a.chunk.js.LICENSE.txt": "/scramble_to_unscramble/static/js/2.28ba194a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fc0333a1.js",
+    "static/js/runtime-main.689cfe73.js",
     "static/js/2.28ba194a.chunk.js",
     "static/css/main.628b5f02.chunk.css",
     "static/js/main.c91d06c2.chunk.js"
