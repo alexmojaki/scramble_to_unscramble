@@ -44,7 +44,7 @@ function App() {
         {options.map((option, optionIndex) =>
           <div
             key={optionIndex}
-            className={`option-word letters-row ${option ? "actual-option" : "option-placeholder"}`}
+            className={`letters-row ${option ? "actual-option" : "option-placeholder"}`}
             onClick={() => {
               if (!option) return;
 
